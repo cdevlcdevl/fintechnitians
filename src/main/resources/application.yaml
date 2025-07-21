@@ -8,7 +8,12 @@ spring:
       schema: ${env.datasource.schema}
   application:
     name: finclusion
+# --- application.properties ---
 
+app:
+  ai:
+    api-key: AIzaSyCom4XQ9v7tnKCo6XKlAbSlnU08AjNggVE
+    model: gemini-2.5-flash
 logging:
   level:
     org:
