@@ -16,7 +16,7 @@ public class AIStartup {
 
     @PostConstruct
     public void init() {
-        System.out.println(aiService.getResponse("make a joke"));
+        System.out.println(aiService.getResponse("make a joke about fat man"));
     }
 
 }
