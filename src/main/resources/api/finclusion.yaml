@@ -1,0 +1,64 @@
+openapi: "3.0.1"
+info:
+  version: 1.0.0
+  title: finclusion service
+
+servers:
+  - url: /
+
+tags:
+  - name: Finclusion Service
+    description: Finclusion service
+
+paths:
+  /users:
+    get:
+      summary: List all users
+      operationId: getAllUsers
+      tags:
+        - Finclusion
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        500:
+          description: server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        400:
+          description: client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - name
+        - emailAddress
+      properties:
+        name:
+          type: string
+        emailAddress:
+          type: string
+
+    ErrorResponse:
+      type: object
+      required:
+        - errorMessage
+      properties:
+        errorCode:
+          type: integer
+        errorMessage:
+          type: string
