@@ -20,5 +20,4 @@ public class AIStartup {
     public void init() {
         System.out.println(aiService.getResponse("make a joke about fat man"));
     }
-
 }

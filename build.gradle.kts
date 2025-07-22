@@ -40,6 +40,7 @@ dependencies {
 
 	implementation("io.swagger.parser.v3:swagger-parser:$swaggerVersion")
 	implementation("org.openapitools:jackson-databind-nullable:$jacksonVersion")
+	implementation("org.springframework.kafka:spring-kafka")
 
 	// Testing
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

@@ -9,11 +9,26 @@ spring:
   application:
     name: finclusion
 
+  kafka:
+    bootstrap-servers: LAPTOP-75RCPK7V:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: finclusion-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+
 app:
   ai:
-    api-key: AIzaSyCom4XQ9v7tnKCo6XKlAbSlnU08AjNggVE
+    api-key: xxx
     model: gemini-2.5-flash
     startup-test-enabled: false
+  kafka:
+    startup-test-enabled: false
+    enabled: true
 
 logging:
   level:
